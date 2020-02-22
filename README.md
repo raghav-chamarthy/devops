@@ -1,6 +1,13 @@
 # devops
 
+1. Configure your AWS admin credentials in a terminal
+2. Clone the repo
+3. execute the deploy script , which will create the VPC, ECS Cluster, Load Balancer , and ECS service
+4. The docker image is already published to dockerhub , my personal public repository
 
+
+
+# need to be edited
 Task List:
 
 1. Create a custom AMI
