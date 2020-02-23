@@ -23,7 +23,7 @@ For the given problem statement , the solution i choose is as follows:
         for the region, for high availability.
     ```
 
-3. Create a new ECS cluster , with EC2 configuration , referring the AMI ID created in the first step.The reason for choosing ECS cluster is to make sure for service resiliency and high availability.
+3. Create a new ECS cluster , with EC2 configuration , referring the AMI ID created in the first step.The reason for choosing ECS cluster is for service resiliency and high availability.
 
 4. Create a public facing ALB , to route the incoming request to the backend services. The ALB is only accepting requests on port 80 and routes it back to the backend service. The ALB is in the public subnet , so can be accessed from the internet.
 
@@ -45,7 +45,7 @@ For the given problem statement , the solution i choose is as follows:
 1. Install packer https://packer.io/intro/getting-started/install.html
 2. Install AWS Cli
 2. Configure your AWS cli with the admin credentials or any role that has all the necessary privileges. (Use AWS configure)
-3. Export your AWS access key and password to the session before running packer.
+3. Export your AWS access key and password to the session before running packer. (AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY)
 
 # Steps to execute:
 
@@ -63,7 +63,8 @@ Once the script execution completes, go to your AWS Management console, copy the
 
 1. Instead of using an ECS cluster, we could have just directly configure a EC2 auto scaling group and provide instructions as part of the launch config. But con's of this approach is , this will guarantee the server being available , but the if the actual application is tricky. We then have to write a health endpoint and might lead to some extra work there.And also scaling of the service is not possible. If we want to have more instances of the service , only way is to scale the number of instances which is not cost effective
 
-2. Currently in ECS Cluster auto-scaling of container instances is not fully effective , as by default we can only have few metrics ( like CPU Utilization , data in and data out). We can use the cloudwatch agent to spit out more metrics and write auto scaling policies around that. So we can add cloudwatch agent in the instance , by either running the agent installation in the userdata during launch config or bake the cloudwatch agent in the AMI used to launch the EC2. A Sample is shown below
+2. Currently in ECS Cluster auto-scaling of container instances is not fully effective , as by default we can only have few metrics from EC2 ( like CPU Utilization , data in and data out). We can use the cloudwatch agent to spit out more metrics and write auto scaling policies around that. 
+We can add cloudwatch agent in the instance , by either running the agent installation in the userdata during launch config or bake the cloudwatch agent in the AMI used to launch the EC2. A Sample is shown below
 
  ```
     rpm -Uvh https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
@@ -71,11 +72,13 @@ Once the script execution completes, go to your AWS Management console, copy the
     /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackId} --resource ASGLaunchConfiguration --region ${AWS::Region}
 ```
 
-3. I could have used ansible to run the show, define a playbook and it orchestrates the entire flow, but for the given use case i though a script would suffice. Definitely can be looked upon.
+3. I could have used ansible to run the demo, define a playbook and it orchestrates the entire flow, but for the given use case in the interest of time , i thought a script would suffice. Definitely can be looked upon.
 
-4. Usage of cloud formation nested stacks is also a definite option , which reduces the risk of execution of a next sequential stack if the dependent stack fails
+4. Usage of cloud formation nested stacks is also a definite option , which reduces the risk of execution of a next sequential stack if the dependent stack fails.
 
-5. Packer currently produces a new AMI ID every time as expected, but this can be conditionally averted
+5. Packer currently produces a new AMI ID every time as expected, but this can be conditionally averted or moved as a separate step in the pipeline.
+
+6. Base AMI in packer script is hard coded ,can be upgraded to read it from the AWS SSM , and pass it as a parameter
 
 
 # Conclusion and comments:
