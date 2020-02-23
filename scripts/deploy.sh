@@ -1,5 +1,10 @@
 #!/bin/bash
 
+packer build -machine-readable ./ami.json | tee build.log
+AMIID="$(grep 'artifact,0,id' build.log | cut -d, -f6 | cut -d: -f2)"
+
+echo "Generated AMI ID is $AMIID"
+
 aws cloudformation deploy \
     --stack-name ap-vpc \
     --template-file ./../templates/vpc.yml \
@@ -8,6 +13,7 @@ aws cloudformation deploy \
 aws cloudformation deploy \
     --stack-name ap-ecs-cluster \
     --template-file ./../templates/ecs-cluster.yml \
+    --parameter-overrides ECSAMI=$AMIID \
     --capabilities CAPABILITY_IAM \
     --no-fail-on-empty-changeset
 

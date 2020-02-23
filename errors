@@ -1,0 +1,8 @@
+ Failed to execute operation: The name org.freedesktop.PolicyKit1 was not provided by any .service files
+==> amazon-ebs: Failed to start ntpd.service: The name org.freedesktop.PolicyKit1 was not provided by any .service files
+==> amazon-ebs: See system logs and 'systemctl status ntpd.service' for details.
+
+
+Failed to stop chronyd.service: The name org.freedesktop.PolicyKit1 was not provided by any .service files
+==> amazon-ebs: See system logs and 'systemctl status chronyd.service' for details.
+==> amazon-ebs: Failed to execute operation: The name org.freedesktop.PolicyKit1 was not provided by any .service files

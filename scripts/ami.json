@@ -11,8 +11,8 @@
           "instance_type": "t2.micro",
           "region": "{{user `region`}}",
           "secret_key": "{{user `aws_secret_key`}}",
-          "source_ami": "ami-0b141ff8507104345",
-          "ssh_username": "MyEC2KeyPair",
+          "source_ami": "ami-05c621ca32de56e7a",
+          "ssh_username": "ec2-user",
           "type": "amazon-ebs"
       }
   ],

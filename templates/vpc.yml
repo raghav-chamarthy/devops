@@ -4,21 +4,7 @@ Parameters:
   EnvironmentName:
     Type: String
     Default: production
-    Description: "A friendly environment name that will be used for namespacing all cluster resources. Example: staging, qa, or production"
 Mappings:
-  # Hard values for the subnet masks. These masks define
-  # the range of internal IP addresses that can be assigned.
-  # The VPC can have all IP's from 10.0.0.0 to 10.0.255.255
-  # There are four subnets which cover the ranges:
-  #
-  # 10.0.0.0 - 10.0.0.255
-  # 10.0.1.0 - 10.0.1.255
-  # 10.0.2.0 - 10.0.2.255
-  # 10.0.3.0 - 10.0.3.255
-  #
-  # If you need more IP addresses (perhaps you have so many
-  # instances that you run out) then you can customize these
-  # ranges to add more
   SubnetConfig:
     VPC:
       CIDR: '10.0.0.0/16'
@@ -31,10 +17,6 @@ Mappings:
     PrivateTwo:
       CIDR: '10.0.3.0/24'
 Resources:
-  # VPC in which containers will be networked.
-  # It has two public subnets, and two private subnets.
-  # We distribute the subnets across the first two available subnets
-  # for the region, for high availability.
   VPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -65,8 +47,7 @@ Resources:
       MapPublicIpOnLaunch: true
 
   # Two private subnets where containers will only have private
-  # IP addresses, and will only be reachable by other members of the
-  # VPC
+  # IP addresses, and will only be reachable by other members of the vpc
   PrivateSubnetOne:
     Type: AWS::EC2::Subnet
     Properties:
@@ -173,9 +154,7 @@ Resources:
       RouteTableId: !Ref PrivateRouteTableTwo
       SubnetId: !Ref PrivateSubnetTwo
 
-# These are the values output by the CloudFormation template. Be careful
-# about changing any of them, because of them are exported with specific
-# names so that the other task related CF templates can use them.
+# These are the values output by the CloudFormation template.
 Outputs:
   VpcId:
     Description: The ID of the VPC that this stack is deployed in

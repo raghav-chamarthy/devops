@@ -1,0 +1,455 @@
+1582426515,,ui,say,==> amazon-ebs: Prevalidating any provided VPC information
+1582426515,,ui,say,==> amazon-ebs: Prevalidating AMI Name: packer-linux-aws-demo-1582426511
+1582426516,,ui,message,    amazon-ebs: Found Image ID: ami-05c621ca32de56e7a
+1582426516,,ui,say,==> amazon-ebs: Creating temporary keypair: packer_5e51e990-f718-6489-0251-94a7e4a6ec64
+1582426516,,ui,say,==> amazon-ebs: Creating temporary security group for this instance: packer_5e51e994-8300-0dce-96b0-b758aa8a30bb
+1582426516,,ui,say,==> amazon-ebs: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...
+1582426517,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1582426517,,ui,say,==> amazon-ebs: Adding tags to source instance
+1582426517,,ui,message,    amazon-ebs: Adding tag: "Name": "Packer Builder"
+1582426518,,ui,message,    amazon-ebs: Instance ID: i-0bbf8e8ad8095ab22
+1582426518,,ui,say,==> amazon-ebs: Waiting for instance (i-0bbf8e8ad8095ab22) to become ready...
+1582426549,,ui,say,==> amazon-ebs: Using ssh communicator to connect: 54.206.15.230
+1582426549,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1582426554,,ui,say,==> amazon-ebs: Connected to SSH!
+1582426554,,ui,say,==> amazon-ebs: Provisioning with shell script: ./install.sh
+1582426554,,ui,message,    amazon-ebs: Installing necessary packages
+1582426555,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426555,,ui,error,==> amazon-ebs: Existing lock /var/run/yum.pid: another copy is running as pid 4130.
+1582426555,,ui,error,==> amazon-ebs: Another app is currently holding the yum lock; waiting for it to exit...
+1582426555,,ui,error,==> amazon-ebs:   The other application is: yum
+1582426555,,ui,error,==> amazon-ebs:     Memory : 107 M RSS (396 MB VSZ)
+1582426555,,ui,error,==> amazon-ebs:     Started: Sun Feb 23 02:55:49 2020 - 00:06 ago
+1582426555,,ui,error,==> amazon-ebs:     State  : Running%!(PACKER_COMMA) pid: 4130
+1582426557,,ui,message,    amazon-ebs: Resolving Dependencies
+1582426557,,ui,message,    amazon-ebs: --> Running transaction check
+1582426557,,ui,message,    amazon-ebs: ---> Package bash.x86_64 0:4.2.46-30.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package bash.x86_64 0:4.2.46-33.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package coreutils.x86_64 0:8.22-21.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package coreutils.x86_64 0:8.22-24.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package cronie.x86_64 0:1.4.11-19.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package cronie.x86_64 0:1.4.11-23.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package cronie-anacron.x86_64 0:1.4.11-19.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package cronie-anacron.x86_64 0:1.4.11-23.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package diffutils.x86_64 0:3.3-4.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package diffutils.x86_64 0:3.3-5.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package ec2-net-utils.noarch 0:1.2-2.1.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package ec2-net-utils.noarch 0:1.3-1.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package ec2-utils.noarch 0:1.0-2.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package ec2-utils.noarch 0:1.1-1.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package findutils.x86_64 1:4.5.11-5.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package findutils.x86_64 1:4.5.11-6.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package iproute.x86_64 0:4.15.0-1.amzn2.0.3 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package iproute.x86_64 0:4.15.0-1.amzn2.0.4 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package iptables.x86_64 0:1.4.21-24.1.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: --> Processing Dependency: libip4tc.so.0()(64bit) for package: iptables-1.8.2-16.amzn2.0.2.x86_64
+1582426557,,ui,message,    amazon-ebs: --> Processing Dependency: libip6tc.so.0()(64bit) for package: iptables-1.8.2-16.amzn2.0.2.x86_64
+1582426557,,ui,message,    amazon-ebs: ---> Package iptables.x86_64 0:1.8.2-16.amzn2.0.2 will be an update
+1582426557,,ui,message,    amazon-ebs: --> Processing Dependency: libpcap.so.1()(64bit) for package: iptables-1.8.2-16.amzn2.0.2.x86_64
+1582426557,,ui,message,    amazon-ebs: ---> Package kernel.x86_64 0:4.14.165-133.209.amzn2 will be installed
+1582426557,,ui,message,    amazon-ebs: ---> Package krb5-libs.x86_64 0:1.15.1-37.amzn2.2.1 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package krb5-libs.x86_64 0:1.15.1-37.amzn2.2.2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package make.x86_64 1:3.82-23.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package make.x86_64 1:3.82-24.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package passwd.x86_64 0:0.79-4.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package passwd.x86_64 0:0.79-5.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package python-urlgrabber.noarch 0:3.10-8.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package python-urlgrabber.noarch 0:3.10-9.amzn2.0.1 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package setup.noarch 0:2.8.71-10.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package setup.noarch 0:2.8.71-10.amzn2.0.1 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package sqlite.x86_64 0:3.7.17-8.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package sqlite.x86_64 0:3.7.17-8.amzn2.1.1 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd.x86_64 0:219-57.amzn2.0.9 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd.x86_64 0:219-57.amzn2.0.12 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd-libs.x86_64 0:219-57.amzn2.0.9 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd-libs.x86_64 0:219-57.amzn2.0.12 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd-sysv.x86_64 0:219-57.amzn2.0.9 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package systemd-sysv.x86_64 0:219-57.amzn2.0.12 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package tar.x86_64 2:1.26-34.amzn2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package tar.x86_64 2:1.26-35.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: ---> Package zlib.x86_64 0:1.2.7-17.amzn2.0.2 will be updated
+1582426557,,ui,message,    amazon-ebs: ---> Package zlib.x86_64 0:1.2.7-18.amzn2 will be an update
+1582426557,,ui,message,    amazon-ebs: --> Running transaction check
+1582426557,,ui,message,    amazon-ebs: ---> Package iptables-libs.x86_64 0:1.8.2-16.amzn2.0.2 will be installed
+1582426557,,ui,message,    amazon-ebs: ---> Package libpcap.x86_64 14:1.5.3-11.amzn2 will be installed
+1582426557,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1582426557,,ui,message,    amazon-ebs:
+1582426557,,ui,message,    amazon-ebs: Dependencies Resolved
+1582426557,,ui,message,    amazon-ebs:
+1582426557,,ui,message,    amazon-ebs: ================================================================================
+1582426557,,ui,message,    amazon-ebs:  Package              Arch      Version                     Repository     Size
+1582426557,,ui,message,    amazon-ebs: ================================================================================
+1582426557,,ui,message,    amazon-ebs: Installing:
+1582426557,,ui,message,    amazon-ebs:  kernel               x86_64    4.14.165-133.209.amzn2      amzn2-core     20 M
+1582426557,,ui,message,    amazon-ebs: Updating:
+1582426557,,ui,message,    amazon-ebs:  bash                 x86_64    4.2.46-33.amzn2             amzn2-core    1.0 M
+1582426557,,ui,message,    amazon-ebs:  coreutils            x86_64    8.22-24.amzn2               amzn2-core    3.2 M
+1582426557,,ui,message,    amazon-ebs:  cronie               x86_64    1.4.11-23.amzn2             amzn2-core     92 k
+1582426557,,ui,message,    amazon-ebs:  cronie-anacron       x86_64    1.4.11-23.amzn2             amzn2-core     36 k
+1582426557,,ui,message,    amazon-ebs:  diffutils            x86_64    3.3-5.amzn2                 amzn2-core    321 k
+1582426557,,ui,message,    amazon-ebs:  ec2-net-utils        noarch    1.3-1.amzn2                 amzn2-core     15 k
+1582426557,,ui,message,    amazon-ebs:  ec2-utils            noarch    1.1-1.amzn2                 amzn2-core     10 k
+1582426557,,ui,message,    amazon-ebs:  findutils            x86_64    1:4.5.11-6.amzn2            amzn2-core    557 k
+1582426557,,ui,message,    amazon-ebs:  iproute              x86_64    4.15.0-1.amzn2.0.4          amzn2-core    510 k
+1582426557,,ui,message,    amazon-ebs:  iptables             x86_64    1.8.2-16.amzn2.0.2          amzn2-core    472 k
+1582426557,,ui,message,    amazon-ebs:  krb5-libs            x86_64    1.15.1-37.amzn2.2.2         amzn2-core    798 k
+1582426557,,ui,message,    amazon-ebs:  make                 x86_64    1:3.82-24.amzn2             amzn2-core    420 k
+1582426557,,ui,message,    amazon-ebs:  passwd               x86_64    0.79-5.amzn2                amzn2-core    105 k
+1582426557,,ui,message,    amazon-ebs:  python-urlgrabber    noarch    3.10-9.amzn2.0.1            amzn2-core    109 k
+1582426557,,ui,message,    amazon-ebs:  setup                noarch    2.8.71-10.amzn2.0.1         amzn2-core    167 k
+1582426557,,ui,message,    amazon-ebs:  sqlite               x86_64    3.7.17-8.amzn2.1.1          amzn2-core    391 k
+1582426557,,ui,message,    amazon-ebs:  systemd              x86_64    219-57.amzn2.0.12           amzn2-core    5.0 M
+1582426557,,ui,message,    amazon-ebs:  systemd-libs         x86_64    219-57.amzn2.0.12           amzn2-core    391 k
+1582426557,,ui,message,    amazon-ebs:  systemd-sysv         x86_64    219-57.amzn2.0.12           amzn2-core     80 k
+1582426557,,ui,message,    amazon-ebs:  tar                  x86_64    2:1.26-35.amzn2             amzn2-core    845 k
+1582426557,,ui,message,    amazon-ebs:  zlib                 x86_64    1.2.7-18.amzn2              amzn2-core     89 k
+1582426557,,ui,message,    amazon-ebs: Installing for dependencies:
+1582426557,,ui,message,    amazon-ebs:  iptables-libs        x86_64    1.8.2-16.amzn2.0.2          amzn2-core     91 k
+1582426557,,ui,message,    amazon-ebs:  libpcap              x86_64    14:1.5.3-11.amzn2           amzn2-core    140 k
+1582426557,,ui,message,    amazon-ebs:
+1582426557,,ui,message,    amazon-ebs: Transaction Summary
+1582426557,,ui,message,    amazon-ebs: ================================================================================
+1582426557,,ui,message,    amazon-ebs: Install   1 Package  (+2 Dependent packages)
+1582426557,,ui,message,    amazon-ebs: Upgrade  21 Packages
+1582426557,,ui,message,    amazon-ebs:
+1582426557,,ui,message,    amazon-ebs: Total download size: 35 M
+1582426557,,ui,message,    amazon-ebs: Downloading packages:
+1582426558,,ui,message,    amazon-ebs: Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+1582426558,,ui,message,    amazon-ebs: --------------------------------------------------------------------------------
+1582426558,,ui,message,    amazon-ebs: Total                                               55 MB/s |  35 MB  00:00
+1582426558,,ui,message,    amazon-ebs: Running transaction check
+1582426559,,ui,message,    amazon-ebs: Running transaction test
+1582426559,,ui,message,    amazon-ebs: Transaction test succeeded
+1582426559,,ui,message,    amazon-ebs: Running transaction
+1582426560,,ui,message,    amazon-ebs:   Updating   : bash-4.2.46-33.amzn2.x86_64                                 1/45
+1582426560,,ui,message,    amazon-ebs:   Updating   : coreutils-8.22-24.amzn2.x86_64                              2/45
+1582426560,,ui,message,    amazon-ebs:   Installing : 14:libpcap-1.5.3-11.amzn2.x86_64                            3/45
+1582426560,,ui,message,    amazon-ebs:   Installing : iptables-libs-1.8.2-16.amzn2.0.2.x86_64                     4/45
+1582426560,,ui,message,    amazon-ebs:   Updating   : iproute-4.15.0-1.amzn2.0.4.x86_64                           5/45
+1582426560,,ui,message,    amazon-ebs:   Updating   : diffutils-3.3-5.amzn2.x86_64                                6/45
+1582426560,,ui,message,    amazon-ebs:   Updating   : zlib-1.2.7-18.amzn2.x86_64                                  7/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : systemd-libs-219-57.amzn2.0.12.x86_64                       8/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : systemd-219-57.amzn2.0.12.x86_64                            9/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : cronie-1.4.11-23.amzn2.x86_64                              10/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : cronie-anacron-1.4.11-23.amzn2.x86_64                      11/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : systemd-sysv-219-57.amzn2.0.12.x86_64                      12/45
+1582426562,,ui,message,    amazon-ebs:   Updating   : ec2-net-utils-1.3-1.amzn2.noarch                           13/45
+1582426565,,ui,message,    amazon-ebs:   Updating   : iptables-1.8.2-16.amzn2.0.2.x86_64                         14/45
+1582426565,,ui,message,    amazon-ebs:   Installing : kernel-4.14.165-133.209.amzn2.x86_64                       15/45
+1582426565,,ui,message,    amazon-ebs:   Updating   : ec2-utils-1.1-1.amzn2.noarch                               16/45
+1582426565,,ui,message,    amazon-ebs:   Updating   : krb5-libs-1.15.1-37.amzn2.2.2.x86_64                       17/45
+1582426565,,ui,message,    amazon-ebs:   Updating   : 1:findutils-4.5.11-6.amzn2.x86_64                          18/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : 1:make-3.82-24.amzn2.x86_64                                19/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : 2:tar-1.26-35.amzn2.x86_64                                 20/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : passwd-0.79-5.amzn2.x86_64                                 21/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : python-urlgrabber-3.10-9.amzn2.0.1.noarch                  22/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : sqlite-3.7.17-8.amzn2.1.1.x86_64                           23/45
+1582426566,,ui,message,    amazon-ebs:   Updating   : setup-2.8.71-10.amzn2.0.1.noarch                           24/45
+1582426566,,ui,message,    amazon-ebs: warning: /etc/shadow created as /etc/shadow.rpmnew
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : ec2-net-utils-1.2-2.1.amzn2.noarch                         25/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : ec2-utils-1.0-2.amzn2.noarch                               26/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : systemd-sysv-219-57.amzn2.0.9.x86_64                       27/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : cronie-1.4.11-19.amzn2.x86_64                              28/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : cronie-anacron-1.4.11-19.amzn2.x86_64                      29/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : systemd-219-57.amzn2.0.9.x86_64                            30/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : krb5-libs-1.15.1-37.amzn2.2.1.x86_64                       31/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : coreutils-8.22-21.amzn2.x86_64                             32/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : diffutils-3.3-4.amzn2.0.2.x86_64                           33/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : iproute-4.15.0-1.amzn2.0.3.x86_64                          34/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : 2:tar-1.26-34.amzn2.x86_64                                 35/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : 1:make-3.82-23.amzn2.0.2.x86_64                            36/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : 1:findutils-4.5.11-5.amzn2.0.2.x86_64                      37/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : iptables-1.4.21-24.1.amzn2.x86_64                          38/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : python-urlgrabber-3.10-8.amzn2.noarch                      39/45
+1582426566,,ui,message,    amazon-ebs:   Cleanup    : setup-2.8.71-10.amzn2.noarch                               40/45
+1582426567,,ui,message,    amazon-ebs:   Cleanup    : bash-4.2.46-30.amzn2.x86_64                                41/45
+1582426567,,ui,message,    amazon-ebs:   Cleanup    : zlib-1.2.7-17.amzn2.0.2.x86_64                             42/45
+1582426567,,ui,message,    amazon-ebs:   Cleanup    : systemd-libs-219-57.amzn2.0.9.x86_64                       43/45
+1582426567,,ui,message,    amazon-ebs:   Cleanup    : passwd-0.79-4.amzn2.0.2.x86_64                             44/45
+1582426577,,ui,message,    amazon-ebs:   Cleanup    : sqlite-3.7.17-8.amzn2.0.2.x86_64                           45/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : cronie-anacron-1.4.11-23.amzn2.x86_64                       1/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : iproute-4.15.0-1.amzn2.0.4.x86_64                           2/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : iptables-libs-1.8.2-16.amzn2.0.2.x86_64                     3/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-sysv-219-57.amzn2.0.12.x86_64                       4/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 14:libpcap-1.5.3-11.amzn2.x86_64                            5/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : bash-4.2.46-33.amzn2.x86_64                                 6/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : cronie-1.4.11-23.amzn2.x86_64                               7/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : iptables-1.8.2-16.amzn2.0.2.x86_64                          8/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : coreutils-8.22-24.amzn2.x86_64                              9/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : setup-2.8.71-10.amzn2.0.1.noarch                           10/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-219-57.amzn2.0.12.x86_64                           11/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : kernel-4.14.165-133.209.amzn2.x86_64                       12/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-libs-219-57.amzn2.0.12.x86_64                      13/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 1:findutils-4.5.11-6.amzn2.x86_64                          14/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 1:make-3.82-24.amzn2.x86_64                                15/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : ec2-utils-1.1-1.amzn2.noarch                               16/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : krb5-libs-1.15.1-37.amzn2.2.2.x86_64                       17/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 2:tar-1.26-35.amzn2.x86_64                                 18/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : sqlite-3.7.17-8.amzn2.1.1.x86_64                           19/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : ec2-net-utils-1.3-1.amzn2.noarch                           20/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : python-urlgrabber-3.10-9.amzn2.0.1.noarch                  21/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : diffutils-3.3-5.amzn2.x86_64                               22/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : passwd-0.79-5.amzn2.x86_64                                 23/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : zlib-1.2.7-18.amzn2.x86_64                                 24/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : krb5-libs-1.15.1-37.amzn2.2.1.x86_64                       25/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : python-urlgrabber-3.10-8.amzn2.noarch                      26/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : coreutils-8.22-21.amzn2.x86_64                             27/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : diffutils-3.3-4.amzn2.0.2.x86_64                           28/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : cronie-1.4.11-19.amzn2.x86_64                              29/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 2:tar-1.26-34.amzn2.x86_64                                 30/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : sqlite-3.7.17-8.amzn2.0.2.x86_64                           31/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-libs-219-57.amzn2.0.9.x86_64                       32/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-219-57.amzn2.0.9.x86_64                            33/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : passwd-0.79-4.amzn2.0.2.x86_64                             34/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : ec2-utils-1.0-2.amzn2.noarch                               35/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : iproute-4.15.0-1.amzn2.0.3.x86_64                          36/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : zlib-1.2.7-17.amzn2.0.2.x86_64                             37/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : ec2-net-utils-1.2-2.1.amzn2.noarch                         38/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 1:make-3.82-23.amzn2.0.2.x86_64                            39/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : systemd-sysv-219-57.amzn2.0.9.x86_64                       40/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : cronie-anacron-1.4.11-19.amzn2.x86_64                      41/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : 1:findutils-4.5.11-5.amzn2.0.2.x86_64                      42/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : bash-4.2.46-30.amzn2.x86_64                                43/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : setup-2.8.71-10.amzn2.noarch                               44/45
+1582426577,,ui,message,    amazon-ebs:   Verifying  : iptables-1.4.21-24.1.amzn2.x86_64                          45/45
+1582426577,,ui,message,    amazon-ebs:
+1582426577,,ui,message,    amazon-ebs: Installed:
+1582426577,,ui,message,    amazon-ebs:   kernel.x86_64 0:4.14.165-133.209.amzn2
+1582426577,,ui,message,    amazon-ebs:
+1582426577,,ui,message,    amazon-ebs: Dependency Installed:
+1582426577,,ui,message,    amazon-ebs:   iptables-libs.x86_64 0:1.8.2-16.amzn2.0.2   libpcap.x86_64 14:1.5.3-11.amzn2
+1582426577,,ui,message,    amazon-ebs:
+1582426577,,ui,message,    amazon-ebs: Updated:
+1582426577,,ui,message,    amazon-ebs:   bash.x86_64 0:4.2.46-33.amzn2
+1582426577,,ui,message,    amazon-ebs:   coreutils.x86_64 0:8.22-24.amzn2
+1582426577,,ui,message,    amazon-ebs:   cronie.x86_64 0:1.4.11-23.amzn2
+1582426577,,ui,message,    amazon-ebs:   cronie-anacron.x86_64 0:1.4.11-23.amzn2
+1582426577,,ui,message,    amazon-ebs:   diffutils.x86_64 0:3.3-5.amzn2
+1582426577,,ui,message,    amazon-ebs:   ec2-net-utils.noarch 0:1.3-1.amzn2
+1582426577,,ui,message,    amazon-ebs:   ec2-utils.noarch 0:1.1-1.amzn2
+1582426577,,ui,message,    amazon-ebs:   findutils.x86_64 1:4.5.11-6.amzn2
+1582426577,,ui,message,    amazon-ebs:   iproute.x86_64 0:4.15.0-1.amzn2.0.4
+1582426577,,ui,message,    amazon-ebs:   iptables.x86_64 0:1.8.2-16.amzn2.0.2
+1582426577,,ui,message,    amazon-ebs:   krb5-libs.x86_64 0:1.15.1-37.amzn2.2.2
+1582426577,,ui,message,    amazon-ebs:   make.x86_64 1:3.82-24.amzn2
+1582426577,,ui,message,    amazon-ebs:   passwd.x86_64 0:0.79-5.amzn2
+1582426577,,ui,message,    amazon-ebs:   python-urlgrabber.noarch 0:3.10-9.amzn2.0.1
+1582426577,,ui,message,    amazon-ebs:   setup.noarch 0:2.8.71-10.amzn2.0.1
+1582426577,,ui,message,    amazon-ebs:   sqlite.x86_64 0:3.7.17-8.amzn2.1.1
+1582426577,,ui,message,    amazon-ebs:   systemd.x86_64 0:219-57.amzn2.0.12
+1582426577,,ui,message,    amazon-ebs:   systemd-libs.x86_64 0:219-57.amzn2.0.12
+1582426577,,ui,message,    amazon-ebs:   systemd-sysv.x86_64 0:219-57.amzn2.0.12
+1582426577,,ui,message,    amazon-ebs:   tar.x86_64 2:1.26-35.amzn2
+1582426577,,ui,message,    amazon-ebs:   zlib.x86_64 0:1.2.7-18.amzn2
+1582426577,,ui,message,    amazon-ebs:
+1582426577,,ui,message,    amazon-ebs: Complete!
+1582426577,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426577,,ui,error,==> amazon-ebs: Existing lock /var/run/yum.pid: another copy is running as pid 8788.
+1582426577,,ui,error,==> amazon-ebs: Another app is currently holding the yum lock; waiting for it to exit...
+1582426577,,ui,error,==> amazon-ebs:   The other application is: yum
+1582426577,,ui,error,==> amazon-ebs:     Memory :  48 M RSS (262 MB VSZ)
+1582426577,,ui,error,==> amazon-ebs:     Started: Sun Feb 23 02:56:16 2020 - 00:01 ago
+1582426577,,ui,error,==> amazon-ebs:     State  : Running%!(PACKER_COMMA) pid: 8788
+1582426579,,ui,error,==> amazon-ebs: Another app is currently holding the yum lock; waiting for it to exit...
+1582426579,,ui,error,==> amazon-ebs:   The other application is: yum
+1582426579,,ui,error,==> amazon-ebs:     Memory : 107 M RSS (321 MB VSZ)
+1582426579,,ui,error,==> amazon-ebs:     Started: Sun Feb 23 02:56:16 2020 - 00:03 ago
+1582426579,,ui,error,==> amazon-ebs:     State  : Running%!(PACKER_COMMA) pid: 8788
+1582426582,,ui,message,    amazon-ebs: No packages needed for security; 0 packages available
+1582426582,,ui,message,    amazon-ebs: No packages marked for update
+1582426582,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426582,,ui,message,    amazon-ebs: Resolving Dependencies
+1582426582,,ui,message,    amazon-ebs: --> Running transaction check
+1582426582,,ui,message,    amazon-ebs: ---> Package tree.x86_64 0:1.6.0-10.amzn2.0.1 will be installed
+1582426582,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: Dependencies Resolved
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: ================================================================================
+1582426582,,ui,message,    amazon-ebs:  Package     Arch          Version                      Repository         Size
+1582426582,,ui,message,    amazon-ebs: ================================================================================
+1582426582,,ui,message,    amazon-ebs: Installing:
+1582426582,,ui,message,    amazon-ebs:  tree        x86_64        1.6.0-10.amzn2.0.1           amzn2-core         47 k
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: Transaction Summary
+1582426582,,ui,message,    amazon-ebs: ================================================================================
+1582426582,,ui,message,    amazon-ebs: Install  1 Package
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: Total download size: 47 k
+1582426582,,ui,message,    amazon-ebs: Installed size: 83 k
+1582426582,,ui,message,    amazon-ebs: Downloading packages:
+1582426582,,ui,message,    amazon-ebs: Running transaction check
+1582426582,,ui,message,    amazon-ebs: Running transaction test
+1582426582,,ui,message,    amazon-ebs: Transaction test succeeded
+1582426582,,ui,message,    amazon-ebs: Running transaction
+1582426582,,ui,message,    amazon-ebs:   Installing : tree-1.6.0-10.amzn2.0.1.x86_64                               1/1
+1582426582,,ui,message,    amazon-ebs:   Verifying  : tree-1.6.0-10.amzn2.0.1.x86_64                               1/1
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: Installed:
+1582426582,,ui,message,    amazon-ebs:   tree.x86_64 0:1.6.0-10.amzn2.0.1
+1582426582,,ui,message,    amazon-ebs:
+1582426582,,ui,message,    amazon-ebs: Complete!
+1582426583,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426583,,ui,message,    amazon-ebs: Resolving Dependencies
+1582426583,,ui,message,    amazon-ebs: --> Running transaction check
+1582426583,,ui,message,    amazon-ebs: ---> Package mtr.x86_64 2:0.92-2.amzn2 will be installed
+1582426583,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1582426583,,ui,message,    amazon-ebs:
+1582426583,,ui,message,    amazon-ebs: Dependencies Resolved
+1582426583,,ui,message,    amazon-ebs:
+1582426583,,ui,message,    amazon-ebs: ================================================================================
+1582426583,,ui,message,    amazon-ebs:  Package      Arch            Version                 Repository           Size
+1582426583,,ui,message,    amazon-ebs: ================================================================================
+1582426583,,ui,message,    amazon-ebs: Installing:
+1582426583,,ui,message,    amazon-ebs:  mtr          x86_64          2:0.92-2.amzn2          amzn2-core           89 k
+1582426583,,ui,message,    amazon-ebs:
+1582426583,,ui,message,    amazon-ebs: Transaction Summary
+1582426583,,ui,message,    amazon-ebs: ================================================================================
+1582426583,,ui,message,    amazon-ebs: Install  1 Package
+1582426583,,ui,message,    amazon-ebs:
+1582426583,,ui,message,    amazon-ebs: Total download size: 89 k
+1582426583,,ui,message,    amazon-ebs: Installed size: 172 k
+1582426583,,ui,message,    amazon-ebs: Downloading packages:
+1582426583,,ui,message,    amazon-ebs: Running transaction check
+1582426583,,ui,message,    amazon-ebs: Running transaction test
+1582426583,,ui,message,    amazon-ebs: Transaction test succeeded
+1582426583,,ui,message,    amazon-ebs: Running transaction
+1582426583,,ui,message,    amazon-ebs:   Installing : 2:mtr-0.92-2.amzn2.x86_64                                    1/1
+1582426584,,ui,message,    amazon-ebs:   Verifying  : 2:mtr-0.92-2.amzn2.x86_64                                    1/1
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: Installed:
+1582426584,,ui,message,    amazon-ebs:   mtr.x86_64 2:0.92-2.amzn2
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: Complete!
+1582426584,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426584,,ui,message,    amazon-ebs: Resolving Dependencies
+1582426584,,ui,message,    amazon-ebs: --> Running transaction check
+1582426584,,ui,message,    amazon-ebs: ---> Package telnet.x86_64 1:0.17-64.amzn2.0.1 will be installed
+1582426584,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: Dependencies Resolved
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: ================================================================================
+1582426584,,ui,message,    amazon-ebs:  Package       Arch          Version                    Repository         Size
+1582426584,,ui,message,    amazon-ebs: ================================================================================
+1582426584,,ui,message,    amazon-ebs: Installing:
+1582426584,,ui,message,    amazon-ebs:  telnet        x86_64        1:0.17-64.amzn2.0.1        amzn2-core         65 k
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: Transaction Summary
+1582426584,,ui,message,    amazon-ebs: ================================================================================
+1582426584,,ui,message,    amazon-ebs: Install  1 Package
+1582426584,,ui,message,    amazon-ebs:
+1582426584,,ui,message,    amazon-ebs: Total download size: 65 k
+1582426584,,ui,message,    amazon-ebs: Installed size: 113 k
+1582426584,,ui,message,    amazon-ebs: Downloading packages:
+1582426585,,ui,message,    amazon-ebs: Running transaction check
+1582426585,,ui,message,    amazon-ebs: Running transaction test
+1582426585,,ui,message,    amazon-ebs: Transaction test succeeded
+1582426585,,ui,message,    amazon-ebs: Running transaction
+1582426585,,ui,message,    amazon-ebs:   Installing : 1:telnet-0.17-64.amzn2.0.1.x86_64                            1/1
+1582426585,,ui,message,    amazon-ebs:   Verifying  : 1:telnet-0.17-64.amzn2.0.1.x86_64                            1/1
+1582426585,,ui,message,    amazon-ebs:
+1582426585,,ui,message,    amazon-ebs: Installed:
+1582426585,,ui,message,    amazon-ebs:   telnet.x86_64 1:0.17-64.amzn2.0.1
+1582426585,,ui,message,    amazon-ebs:
+1582426585,,ui,message,    amazon-ebs: Complete!
+1582426585,,ui,error,==> amazon-ebs: Removed symlink /etc/systemd/system/multi-user.target.wants/chronyd.service.
+1582426585,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426585,,ui,error,==> amazon-ebs: Existing lock /var/run/yum.pid: another copy is running as pid 4221.
+1582426585,,ui,error,==> amazon-ebs: Another app is currently holding the yum lock; waiting for it to exit...
+1582426585,,ui,error,==> amazon-ebs:   The other application is: yum
+1582426585,,ui,error,==> amazon-ebs:     Memory :  31 M RSS (245 MB VSZ)
+1582426585,,ui,error,==> amazon-ebs:     Started: Sun Feb 23 02:55:50 2020 - 00:35 ago
+1582426585,,ui,error,==> amazon-ebs:     State  : Running%!(PACKER_COMMA) pid: 4221
+1582426588,,ui,message,    amazon-ebs: Resolving Dependencies
+1582426588,,ui,message,    amazon-ebs: --> Running transaction check
+1582426588,,ui,message,    amazon-ebs: ---> Package ntp.x86_64 0:4.2.6p5-29.amzn2.0.1 will be installed
+1582426588,,ui,message,    amazon-ebs: --> Processing Dependency: ntpdate = 4.2.6p5-29.amzn2.0.1 for package: ntp-4.2.6p5-29.amzn2.0.1.x86_64
+1582426588,,ui,message,    amazon-ebs: --> Processing Dependency: libopts.so.25()(64bit) for package: ntp-4.2.6p5-29.amzn2.0.1.x86_64
+1582426588,,ui,message,    amazon-ebs: --> Running transaction check
+1582426588,,ui,message,    amazon-ebs: ---> Package autogen-libopts.x86_64 0:5.18-5.amzn2.0.2 will be installed
+1582426588,,ui,message,    amazon-ebs: ---> Package ntpdate.x86_64 0:4.2.6p5-29.amzn2.0.1 will be installed
+1582426588,,ui,message,    amazon-ebs: --> Finished Dependency Resolution
+1582426588,,ui,message,    amazon-ebs:
+1582426588,,ui,message,    amazon-ebs: Dependencies Resolved
+1582426588,,ui,message,    amazon-ebs:
+1582426588,,ui,message,    amazon-ebs: ================================================================================
+1582426588,,ui,message,    amazon-ebs:  Package             Arch       Version                    Repository      Size
+1582426588,,ui,message,    amazon-ebs: ================================================================================
+1582426588,,ui,message,    amazon-ebs: Installing:
+1582426588,,ui,message,    amazon-ebs:  ntp                 x86_64     4.2.6p5-29.amzn2.0.1       amzn2-core     544 k
+1582426588,,ui,message,    amazon-ebs: Installing for dependencies:
+1582426588,,ui,message,    amazon-ebs:  autogen-libopts     x86_64     5.18-5.amzn2.0.2           amzn2-core      67 k
+1582426588,,ui,message,    amazon-ebs:  ntpdate             x86_64     4.2.6p5-29.amzn2.0.1       amzn2-core      86 k
+1582426588,,ui,message,    amazon-ebs:
+1582426588,,ui,message,    amazon-ebs: Transaction Summary
+1582426588,,ui,message,    amazon-ebs: ================================================================================
+1582426588,,ui,message,    amazon-ebs: Install  1 Package (+2 Dependent packages)
+1582426588,,ui,message,    amazon-ebs:
+1582426588,,ui,message,    amazon-ebs: Total download size: 697 k
+1582426588,,ui,message,    amazon-ebs: Installed size: 1.6 M
+1582426588,,ui,message,    amazon-ebs: Downloading packages:
+1582426589,,ui,message,    amazon-ebs: --------------------------------------------------------------------------------
+1582426589,,ui,message,    amazon-ebs: Total                                              1.8 MB/s | 697 kB  00:00
+1582426589,,ui,message,    amazon-ebs: Running transaction check
+1582426589,,ui,message,    amazon-ebs: Running transaction test
+1582426589,,ui,message,    amazon-ebs: Transaction test succeeded
+1582426589,,ui,message,    amazon-ebs: Running transaction
+1582426589,,ui,message,    amazon-ebs:   Installing : ntpdate-4.2.6p5-29.amzn2.0.1.x86_64                          1/3
+1582426589,,ui,message,    amazon-ebs:   Installing : autogen-libopts-5.18-5.amzn2.0.2.x86_64                      2/3
+1582426589,,ui,message,    amazon-ebs:   Installing : ntp-4.2.6p5-29.amzn2.0.1.x86_64                              3/3
+1582426590,,ui,message,    amazon-ebs:   Verifying  : autogen-libopts-5.18-5.amzn2.0.2.x86_64                      1/3
+1582426590,,ui,message,    amazon-ebs:   Verifying  : ntpdate-4.2.6p5-29.amzn2.0.1.x86_64                          2/3
+1582426590,,ui,message,    amazon-ebs:   Verifying  : ntp-4.2.6p5-29.amzn2.0.1.x86_64                              3/3
+1582426590,,ui,message,    amazon-ebs:
+1582426590,,ui,message,    amazon-ebs: Installed:
+1582426590,,ui,message,    amazon-ebs:   ntp.x86_64 0:4.2.6p5-29.amzn2.0.1
+1582426590,,ui,message,    amazon-ebs:
+1582426590,,ui,message,    amazon-ebs: Dependency Installed:
+1582426590,,ui,message,    amazon-ebs:   autogen-libopts.x86_64 0:5.18-5.amzn2.0.2
+1582426590,,ui,message,    amazon-ebs:   ntpdate.x86_64 0:4.2.6p5-29.amzn2.0.1
+1582426590,,ui,message,    amazon-ebs:
+1582426590,,ui,message,    amazon-ebs: Complete!
+1582426590,,ui,error,==> amazon-ebs: Created symlink from /etc/systemd/system/multi-user.target.wants/ntpd.service to /usr/lib/systemd/system/ntpd.service.
+1582426590,,ui,message,    amazon-ebs: Loaded plugins: priorities%!(PACKER_COMMA) update-motd%!(PACKER_COMMA) upgrade-helper
+1582426591,,ui,message,    amazon-ebs: No packages marked for update
+1582426591,,ui,message,    amazon-ebs: fs.file-max = 65535
+1582426591,,ui,message,    amazon-ebs: kernel.pid_max = 65535
+1582426591,,ui,message,    amazon-ebs: *  soft     nproc          65535
+1582426591,,ui,message,    amazon-ebs: *  hard     nproc          65535
+1582426591,,ui,message,    amazon-ebs: *  soft     nofile         65535
+1582426591,,ui,message,    amazon-ebs: *  hard     nofile         65535
+1582426591,,ui,message,    amazon-ebs: *  soft     nproc          65535
+1582426591,,ui,message,    amazon-ebs: *  hard     nproc          65535
+1582426591,,ui,message,    amazon-ebs: *  soft     nofile         65535
+1582426591,,ui,message,    amazon-ebs: *  hard     nofile         65535
+1582426591,,ui,message,    amazon-ebs: fs.file-max = 65535
+1582426591,,ui,message,    amazon-ebs: options ipv6 disable=1
+1582426591,,ui,message,    amazon-ebs: alias net-pf-10 off
+1582426591,,ui,message,    amazon-ebs: alias ipv6 off
+1582426591,,ui,message,    amazon-ebs: install ipv6 /bin/true
+1582426591,,ui,message,    amazon-ebs: blacklist ipv6
+1582426591,,ui,message,    amazon-ebs: net.ipv6.conf.all.disable_ipv6 = 1
+1582426591,,ui,message,    amazon-ebs: net.ipv6.conf.default.disable_ipv6 = 1
+1582426591,,ui,message,    amazon-ebs: net.ipv6.conf.lo.disable_ipv6 = 1
+1582426591,,ui,message,    amazon-ebs: fs.file-max = 65535
+1582426591,,ui,say,==> amazon-ebs: Stopping the source instance...
+1582426591,,ui,message,    amazon-ebs: Stopping instance
+1582426594,,ui,say,==> amazon-ebs: Waiting for the instance to stop...
+1582426625,,ui,say,==> amazon-ebs: Creating AMI packer-linux-aws-demo-1582426511 from instance i-0bbf8e8ad8095ab22
+1582426626,,ui,message,    amazon-ebs: AMI: ami-0c5d871c96336f3a4
+1582426626,,ui,say,==> amazon-ebs: Waiting for AMI to become ready...
+1582426705,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1582426721,,ui,say,==> amazon-ebs: Cleaning up any extra volumes...
+1582426721,,ui,say,==> amazon-ebs: No volumes to clean up%!(PACKER_COMMA) skipping
+1582426721,,ui,say,==> amazon-ebs: Deleting temporary security group...
+1582426721,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1582426722,,ui,say,Build 'amazon-ebs' finished.
+1582426722,,ui,say,\n==> Builds finished. The artifacts of successful builds are:
+1582426722,amazon-ebs,artifact-count,1
+1582426722,amazon-ebs,artifact,0,builder-id,mitchellh.amazonebs
+1582426722,amazon-ebs,artifact,0,id,ap-southeast-2:ami-0c5d871c96336f3a4
+1582426722,amazon-ebs,artifact,0,string,AMIs were created:\nap-southeast-2: ami-0c5d871c96336f3a4\n
+1582426722,amazon-ebs,artifact,0,files-count,0
+1582426722,amazon-ebs,artifact,0,end
+1582426722,,ui,say,--> amazon-ebs: AMIs were created:\nap-southeast-2: ami-0c5d871c96336f3a4\n

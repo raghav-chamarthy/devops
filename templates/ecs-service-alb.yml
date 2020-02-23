@@ -18,9 +18,9 @@ Resources:
       SourceSecurityGroupId: !Ref 'PublicLoadBalancerSG'
 
   # Public load balancer, hosted in public subnets that is accessible
-  # to the public, and is intended to route traffic to one or more public
+  # to the public, and is intended to route traffic to the afterpay public
   # facing services. This is used for accepting traffic from the public
-  # internet and directing it to public facing microservices
+  # internet only on port 80 an route it to the python service
   PublicLoadBalancerSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -28,7 +28,7 @@ Resources:
       VpcId:
         Fn::ImportValue: !Sub ${EnvironmentName}:VpcId
       SecurityGroupIngress:
-          # Allow access to ALB from anywhere on the internet
+          # Allow access to ALB from anywhere on the internet, only on port 80
           - CidrIp: 0.0.0.0/0
             IpProtocol: tcp
             FromPort: 80

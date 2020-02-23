@@ -17,8 +17,7 @@ Parameters:
     Default: '2'
   ECSAMI:
     Description: AMI ID
-    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ecs/optimized-ami/amazon-linux/recommended/image_id
+    Type: String
 
 Resources:
   # ECS Resources
@@ -224,9 +223,7 @@ Resources:
               - 'elasticloadbalancing:RegisterTargets'
             Resource: '*'
 
-# These are the values output by the CloudFormation template. Be careful
-# about changing any of them, because of them are exported with specific
-# names so that the other task related CF templates can use them.
+# These are the values output by the CloudFormation template
 Outputs:
   ClusterName:
     Description: The name of the ECS cluster
